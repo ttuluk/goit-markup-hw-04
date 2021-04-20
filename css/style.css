@@ -14,6 +14,7 @@
   --prime-card-swadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --secondary-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --background-hero: rgba(47, 48, 58, 0.8);
 }
 /*тип блочной модели*/
 html {
@@ -184,7 +185,14 @@ p {
   display: block;
   width: 696px;
 }
-
+.overlay {
+  background-image: url(../images/background/background.jpg);
+  max-width: 1600px;
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .hero-title {
   display: inline-block;
   margin-right: auto;
@@ -342,6 +350,9 @@ img {
 .team-card-text {
   padding: 30px;
 }
+.team-position {
+  margin-bottom: 16px;
+}
 
 .team-title {
   display: inline-block;
@@ -353,8 +364,26 @@ img {
   letter-spacing: 0.03em;
 }
 
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+.social-item {
+  display: flex;
+  margin-right: 10px;
+}
+.social-item:last-child {
+  margin-bottom: 0;
+}
+.social-link {
+  width: 44px;
+  height: 44px;
+}
+.icon {
+  fill: darkmagenta;
+}
 /*подвал*/
-footer {
+.footer {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -364,7 +393,7 @@ footer {
   padding-bottom: 60px;
 }
 
-footer .link-logo {
+.footer .link-logo {
   padding: 0;
   color: var(--secondary-text-color);
 }
@@ -384,6 +413,24 @@ footer .link-logo {
 }
 .footer-link {
   color: var(--footer-text-color);
+}
+.footer-box {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.address-box {
+  display: flex;
+  width: 231px;
+  margin-right: 70px;
+}
+.social-go {
+  display: flex;
+  flex-direction: column;
+  width: 206px;
+}
+
+.social-item {
+  display: flex;
 }
 
 /*сss для портфолио*/
