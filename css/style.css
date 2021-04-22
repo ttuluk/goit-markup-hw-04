@@ -7,6 +7,7 @@
   --secondary-bg-color: #f5f4fa;
   --footer-bg-color: #2f303a;
   --footer-text-color: rgba(255, 255, 255, 0.6);
+  --footer-social-color: rgba(255, 255, 255, 0.1);
   --button-bg-color: rgba(245, 244, 250, 1);
   --border-color: rgba(236, 236, 236, 1);
   --border-team-color: rgba(255, 255, 255, 1);
@@ -15,6 +16,7 @@
   --secondary-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --background-hero: rgba(47, 48, 58, 0.8);
+  --icon-color: rgba(175, 177, 184, 1);
 }
 /*тип блочной модели*/
 html {
@@ -121,7 +123,6 @@ body {
 }
 
 .site-nav > .item {
-  display: flex;
   margin-right: 50px;
 }
 
@@ -142,7 +143,6 @@ body {
 .auth-nav {
   display: flex;
   margin-left: auto;
-
   color: var(--prime-text-color);
 
   font-weight: 500;
@@ -160,8 +160,15 @@ body {
 }
 
 .auth-nav .link {
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.auth-nav-icon {
+  stroke: currentColor;
+  margin-right: 10px;
 }
 
 /*утилиты*/
@@ -282,7 +289,15 @@ button {
 .card-set .features-item:last-child {
   margin-left: 0;
 }
-
+/*не доделала*/
+.features-rect:before {
+  display: block;
+  content: "";
+  border-radius: 4px;
+  width: 270px;
+  height: 200px;
+  fill: red /*var(--secondary-bg-color)*/;
+}
 .features-title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -347,13 +362,10 @@ img {
 .card-set .team-item:nth-child(4n + 4) {
   margin-right: 0;
 }
+
 .team-card-text {
   padding: 30px;
 }
-.team-position {
-  margin-bottom: 16px;
-}
-
 .team-title {
   display: inline-block;
   margin-bottom: 10px;
@@ -365,22 +377,42 @@ img {
 }
 
 .social-list {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  margin-top: 16px;
 }
 .social-item {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 10px;
 }
 .social-item:last-child {
-  margin-bottom: 0;
+  margin-right: 0;
 }
+
 .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-bg-color);
 }
-.icon {
-  fill: darkmagenta;
+
+.social-icon {
+  fill: var(--icon-color);
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--primary-bg-color);
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-text-color);
 }
 /*подвал*/
 .footer {
@@ -427,12 +459,18 @@ img {
   display: flex;
   flex-direction: column;
   width: 206px;
+  margin-left: 70px;
 }
 
 .social-item {
   display: flex;
 }
-
+.footer-social-link {
+  background-color: var(--footer-social-color);
+}
+.footer-icon {
+  fill: var(--primary-bg-color);
+}
 /*сss для портфолио*/
 .container .filter-list {
   display: flex;
