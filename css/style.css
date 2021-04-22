@@ -15,7 +15,7 @@
   --prime-card-swadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --secondary-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  --background-hero: rgba(47, 48, 58, 0.8);
+  --background-hero: rgba(47, 48, 58, 0.4);
   --icon-color: rgba(175, 177, 184, 1);
 }
 /*тип блочной модели*/
@@ -141,7 +141,7 @@ body {
 
 /*контакты*/
 .auth-nav {
-  display: flex;
+  display: inline-flex;
   margin-left: auto;
   color: var(--prime-text-color);
 
@@ -195,7 +195,8 @@ p {
   width: 696px;
 }
 .overlay {
-  background-image: url(../images/background/background.jpg);
+  background-image: url(../images/background/img-overlay.png),
+    url(../images/background/background.jpg);
   max-width: 1600px;
   min-height: 600px;
   background-repeat: no-repeat;
@@ -283,23 +284,25 @@ button {
 .card-set .features-item {
   display: flex;
   flex-direction: column;
-  width: 270px;
+  width: calc((100% - 4 * 30px) / 4);
   margin-right: 30px;
   margin-top: 30px;
 }
 
-.card-set .features-item:last-child {
-  margin-left: 0;
+.card-set .features-item:nth-child(4n + 4) {
+  margin-right: 0;
 }
-/*не доделала*/
-.features-rect:before {
-  display: block;
-  content: "";
-  border-radius: 4px;
+.features-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 270px;
-  height: 200px;
-  fill: red /*var(--secondary-bg-color)*/;
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
+
 .features-title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -416,6 +419,45 @@ img {
 .social-link:focus {
   background-color: var(--accent-text-color);
 }
+/*постоянные клиенты*/
+.clients-list {
+  display: inline-flex;
+  flex-wrap: no-wrap;
+}
+
+.clients-item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 170px;
+  height: 92px;
+  margin-right: 30px;
+}
+.clients-item:last-child {
+  margin-right: 0;
+}
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.clients-svg {
+  fill: var(--icon-color);
+  width: 106px;
+  height: 60px;
+}
+.clients-link:hover .clients-svg {
+  fill: var(--accent-text-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-text-color);
+}
+
 /*подвал*/
 .footer {
   font-size: 14px;
