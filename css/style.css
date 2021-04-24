@@ -168,6 +168,9 @@ body {
 
 .auth-nav-icon {
   stroke: currentColor;
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
   margin-right: 10px;
 }
 
@@ -359,9 +362,6 @@ img {
   text-align: center;
   background-color: var(--secondary-text-color);
   border-radius: 0px 0px 4px 4px;
-}
-.card-set .team-item:hover,
-.team-item:focus {
   box-shadow: var(--secondary-card-shadow);
 }
 .card-set .team-item:nth-child(4n + 4) {
@@ -421,17 +421,16 @@ img {
 }
 /*постоянные клиенты*/
 .clients-list {
-  display: inline-flex;
-  flex-wrap: no-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clients-item {
   display: flex;
-  flex-wrap: wrap;
-  width: 170px;
-  height: 92px;
   margin-right: 30px;
 }
+
 .clients-item:last-child {
   margin-right: 0;
 }
@@ -441,15 +440,20 @@ img {
   justify-content: center;
   width: 170px;
   height: 92px;
-  border: 1px solid #afb1b8;
   border-radius: 4px;
+  border: 1px solid #afb1b8;
 }
 .clients-svg {
+  display: flex;
   fill: var(--icon-color);
-  width: 106px;
-  height: 60px;
+  background-position: center;
+  background-size: contain;
+  width: 88px;
+  height: 52px;
 }
-.clients-link:hover .clients-svg {
+
+.clients-link:hover .clients-svg,
+.clients-link:focus .clients-svg {
   fill: var(--accent-text-color);
 }
 
@@ -473,6 +477,13 @@ img {
   padding: 0;
   color: var(--secondary-text-color);
 }
+.footer-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+}
+
 .address {
   font-style: inherit;
   margin-top: 20px;
@@ -493,6 +504,7 @@ img {
 .footer-box {
   display: flex;
   flex-wrap: nowrap;
+  align-items: baseline;
 }
 .address-box {
   display: flex;
@@ -564,7 +576,6 @@ img {
   margin-top: 30px;
 }
 
-.galery-image:hover,
 .galery-item:hover,
 .galery-item:focus {
   box-shadow: var(--prime-card-swadow);
