@@ -589,7 +589,7 @@ img {
 .card-set .galery-item:nth-child(3n + 3) {
   margin-right: 0;
 }
-.galery-card {
+.galery-item > .galery-card {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
