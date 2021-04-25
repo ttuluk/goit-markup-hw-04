@@ -589,7 +589,13 @@ img {
 .card-set .galery-item:nth-child(3n + 3) {
   margin-right: 0;
 }
-
+.galery-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .galery-card-text {
   border-right: 1px solid var(--border-portfolio-color);
   border-bottom: 1px solid var(--border-portfolio-color);
